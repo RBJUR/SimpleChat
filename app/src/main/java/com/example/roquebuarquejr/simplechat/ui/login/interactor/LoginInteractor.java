@@ -64,7 +64,7 @@ public class LoginInteractor implements LInteractor {
 
                     }
                 });
-        
+
            }
 
     @Override

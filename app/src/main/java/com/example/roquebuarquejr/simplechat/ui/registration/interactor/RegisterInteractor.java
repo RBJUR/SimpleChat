@@ -43,28 +43,14 @@ public class RegisterInteractor implements RInteractor {
                             userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users/" + uid);
                             userRef.setValue(createUser(username, emoji));
                             presenter.onSuccess();
-                        }else{
+                        } else {
                             Log.d("AuthFail", task.getException().toString());
                             presenter.onFailure();
                         }
 
                     }
                 });
-
-       /* userRef.createUser(email, password, new Firebase.ValueResultHandler<Map<String, Object>>() {
-            @Override
-            public void onSuccess(Map<String, Object> stringObjectMap) {
-                String uid = stringObjectMap.get("uid").toString();
-                userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users/" + uid);
-                userRef.setValue(createUser(username, emoji));
-                presenter.onSuccess();
-            }
-
-            @Override
-            public void onError(FirebaseError firebaseError) {
-                presenter.onFailure();
-            }
-        });*/
+        
     }
 
     @Override
