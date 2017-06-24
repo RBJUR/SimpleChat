@@ -17,7 +17,7 @@ import com.example.roquebuarquejr.simplechat.ui.registration.presenter.UsernameP
 
 
 /**
- * Created by Filip on 27/02/2016.
+ * Created by roque
  */
 public class ChooseUsernameFragment extends Fragment implements View.OnClickListener, UsernameFragmentView {
     private EditText mUsernameEditText;

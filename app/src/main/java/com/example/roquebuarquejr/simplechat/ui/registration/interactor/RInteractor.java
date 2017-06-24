@@ -3,7 +3,7 @@ package com.example.roquebuarquejr.simplechat.ui.registration.interactor;
 import java.util.Map;
 
 /**
- * Created by Filip on 24/02/2016.
+ * Created by roque
  */
 public interface RInteractor {
     void receiveRegisterRequest(String username, String email, String password, String emoji);

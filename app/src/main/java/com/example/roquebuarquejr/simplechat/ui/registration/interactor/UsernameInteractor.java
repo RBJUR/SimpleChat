@@ -8,7 +8,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 /**
- * Created by Filip on 27/02/2016.
+ * Created by roque
  */
 public class UsernameInteractor implements UInteractor {
     private final UsernamePresenter presenter;

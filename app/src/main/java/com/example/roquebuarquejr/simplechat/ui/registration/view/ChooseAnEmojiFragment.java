@@ -19,7 +19,7 @@ import com.example.roquebuarquejr.simplechat.ui.adapter.registration.OnEmojiClic
 
 
 /**
- * Created by Filip on 26/02/2016.
+ * Created by roque
  */
 public class ChooseAnEmojiFragment extends Fragment implements OnEmojiClickListener {
     private RecyclerView mEmojiList;

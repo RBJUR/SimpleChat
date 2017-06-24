@@ -5,7 +5,7 @@ import com.example.roquebuarquejr.simplechat.ui.registration.interactor.Register
 import com.example.roquebuarquejr.simplechat.ui.registration.view.RegisterView;
 
 /**
- * Created by Filip on 23/02/2016.
+ * Created by roque
  */
 public class FirebaseUserRegisterPresenterImpl implements FirebaseUserRegisterPresenter {
     private final RegisterView registerView;

@@ -1,7 +1,7 @@
 package com.example.roquebuarquejr.simplechat.ui.registration.presenter;
 
 /**
- * Created by Filip on 27/02/2016.
+ * Created by roque
  */
 public interface UsernamePresenter {
     void checkIfUsernameIsTaken(String username);

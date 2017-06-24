@@ -5,7 +5,7 @@ import com.example.roquebuarquejr.simplechat.ui.registration.interactor.Username
 import com.example.roquebuarquejr.simplechat.ui.registration.view.UsernameFragmentView;
 
 /**
- * Created by Filip on 27/02/2016.
+ * Created by roque
  */
 public class UsernamePresenterImpl implements UsernamePresenter {
     private final UsernameFragmentView usernameFragmentView;

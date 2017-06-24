@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Filip on 24/02/2016.
+ * Created by roque
  */
 public class RegisterInteractor implements RInteractor {
     private Firebase userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users/");

@@ -16,7 +16,7 @@ import com.example.roquebuarquejr.simplechat.ui.registration.presenter.FirebaseU
 
 
 /**
- * Created by Filip on 26/02/2016.
+ * Created by roque
  */
 public class ChooseEmailFragment extends Fragment implements View.OnClickListener, RegisterView {
     private ProgressBar mProgressBar;
