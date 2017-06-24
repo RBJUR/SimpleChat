@@ -5,7 +5,7 @@ import com.example.roquebuarquejr.simplechat.ui.main.interactor.MainInteractor;
 import com.example.roquebuarquejr.simplechat.ui.main.view.MainView;
 
 /**
- * Created by Filip on 24/02/2016.
+ * Created by roque
  */
 public class MainActivityPresenterImpl implements MainPresenter {
     private final MainView mainView;

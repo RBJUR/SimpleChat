@@ -7,7 +7,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 /**
- * Created by Filip on 24/02/2016.
+ * Created by roque
  */
 public class MainInteractor implements MInteractor {
     private final Firebase mainRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers");

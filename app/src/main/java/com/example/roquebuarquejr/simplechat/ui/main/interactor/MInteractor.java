@@ -1,7 +1,7 @@
 package com.example.roquebuarquejr.simplechat.ui.main.interactor;
 
 /**
- * Created by Filip on 24/02/2016.
+ * Created by roque
  */
 public interface MInteractor {
     void receiveRequest();

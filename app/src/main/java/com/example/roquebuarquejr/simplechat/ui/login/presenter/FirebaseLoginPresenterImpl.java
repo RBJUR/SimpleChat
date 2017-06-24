@@ -5,7 +5,7 @@ import com.example.roquebuarquejr.simplechat.ui.login.interactor.LoginInteractor
 import com.example.roquebuarquejr.simplechat.ui.login.view.LoginView;
 
 /**
- * Created by Filip on 23/02/2016.
+ * Created by roque
  */
 public class FirebaseLoginPresenterImpl implements FirebaseLoginPresenter {
     private final LoginView loginView;

@@ -15,7 +15,7 @@ import com.example.roquebuarquejr.simplechat.ui.registration.view.RegisterActivi
 import com.firebase.client.Firebase;
 
 /**
- * Created by Filip on 23/02/2016.
+ * Created by roque
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, MainView {
     private TextView mOnlineUsers;

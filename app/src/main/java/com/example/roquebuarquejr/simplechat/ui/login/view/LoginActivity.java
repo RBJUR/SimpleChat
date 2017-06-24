@@ -16,7 +16,7 @@ import com.example.roquebuarquejr.simplechat.ui.login.presenter.FirebaseLoginPre
 import com.firebase.client.Firebase;
 
 /**
- * Created by Filip on 23/02/2016.
+ * Created by roque
  */
 public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener {
     private ProgressBar mProgressBar;

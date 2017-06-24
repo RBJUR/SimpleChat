@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Filip on 24/02/2016.
+ * Created by roque
  */
 //// TODO: 26/02/2016 add emoji to users and implement them into messages
 public class LoginInteractor implements LInteractor {
