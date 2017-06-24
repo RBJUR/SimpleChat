@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 //pushes a message to Firebase on every onClick method usage
 public class ChatMessageInteractor implements CMessageInteractor {

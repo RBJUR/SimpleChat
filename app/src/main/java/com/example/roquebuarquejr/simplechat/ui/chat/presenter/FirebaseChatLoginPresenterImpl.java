@@ -4,7 +4,7 @@ package com.example.roquebuarquejr.simplechat.ui.chat.presenter;
 import com.example.roquebuarquejr.simplechat.ui.chat.interactor.ChatLoginInteractor;
 
 /**
- * Created by Filip on 23/02/2016.
+ * Created by roque
  */
 public class FirebaseChatLoginPresenterImpl implements FirebaseChatLoginPresenter {
     private final ChatLoginInteractor interactor;

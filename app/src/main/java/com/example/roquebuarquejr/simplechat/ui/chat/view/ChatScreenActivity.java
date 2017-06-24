@@ -15,7 +15,7 @@ import com.example.roquebuarquejr.simplechat.ui.chat.presenter.FirebaseChatLogin
 import com.firebase.client.Firebase;
 
 /**
- * Created by Filip on 23/02/2016.
+ * Created by roque
  */
 public class ChatScreenActivity extends AppCompatActivity {
     private FirebaseChatLoginPresenterImpl presenter;

@@ -17,7 +17,7 @@ import com.example.roquebuarquejr.simplechat.ui.adapter.chat.CustomMessageRecycl
 import com.example.roquebuarquejr.simplechat.ui.chat.presenter.FirebaseChatMessagePresenterImpl;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public class ChatFragment extends Fragment implements View.OnClickListener {
     private RecyclerView mMessagesListView;

@@ -3,7 +3,7 @@ package com.example.roquebuarquejr.simplechat.ui.chat.interactor;
 import java.util.Map;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public interface CMessageInteractor {
     void pushMessageToFirebase(String author, String message, String emoji);

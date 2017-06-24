@@ -4,7 +4,7 @@ package com.example.roquebuarquejr.simplechat.ui.chat.presenter;
 import com.example.roquebuarquejr.simplechat.ui.chat.interactor.ChatMessageInteractor;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public class FirebaseChatMessagePresenterImpl implements FirebaseChatMessagePresenter {
     private final ChatMessageInteractor interactor;

@@ -15,7 +15,7 @@ import com.example.roquebuarquejr.simplechat.ui.adapter.users.CustomUsersAdapter
 
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public class ListOfUsersFragment extends Fragment {
     private RecyclerView mListOfOnlineUsers;

@@ -50,7 +50,7 @@ public class RegisterInteractor implements RInteractor {
 
                     }
                 });
-        
+
     }
 
     @Override
