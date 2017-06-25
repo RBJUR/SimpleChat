@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".ui.chat.view.ChatScreenActivity">
+    tools:context=".chat.view.ChatScreenActivity">
 
     <FrameLayout
         android:id="@+id/chat_activity_frame_layout"

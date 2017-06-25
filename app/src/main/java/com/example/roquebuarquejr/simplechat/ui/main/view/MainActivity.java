@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.ui.login.view.LoginActivity;
 import com.example.roquebuarquejr.simplechat.ui.main.presenter.MainActivityPresenterImpl;
-import com.example.roquebuarquejr.simplechat.ui.registration.view.RegisterActivity;
+import com.example.roquebuarquejr.simplechat.registration.view.RegisterActivity;
 import com.firebase.client.Firebase;
 
 /**
