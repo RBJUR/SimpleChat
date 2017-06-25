@@ -8,7 +8,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public class MessageInteractor {
     private final MessagePresenter presenter;

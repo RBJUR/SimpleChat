@@ -1,4 +1,4 @@
-package com.example.roquebuarquejr.simplechat.ui.adapter.users;
+package com.example.roquebuarquejr.simplechat.user.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,11 +9,12 @@ import android.widget.TextView;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.model.User;
+import com.example.roquebuarquejr.simplechat.user.presenter.CurrentUsersPresenterImpl;
 
 import java.util.ArrayList;
 
 /**
- * Created by Filip on 24/02/2016.
+ * Created by roque
  */
 
 // Shows current online users in a list(by username)

@@ -3,7 +3,7 @@ package com.example.roquebuarquejr.simplechat.model;
 import java.io.Serializable;
 
 /**
- * Created by Filip on 23/02/2016.
+ * Created by roque
  */
 public class User implements Serializable {
     private String username;

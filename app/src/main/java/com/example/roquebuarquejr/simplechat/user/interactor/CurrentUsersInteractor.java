@@ -1,6 +1,7 @@
-package com.example.roquebuarquejr.simplechat.ui.adapter.users;
+package com.example.roquebuarquejr.simplechat.user.interactor;
 
 import com.example.roquebuarquejr.simplechat.model.User;
+import com.example.roquebuarquejr.simplechat.user.presenter.CurrentUsersPresenter;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -9,7 +10,7 @@ import com.firebase.client.ValueEventListener;
 import java.util.ArrayList;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public class CurrentUsersInteractor {
     private final CurrentUsersPresenter presenter;

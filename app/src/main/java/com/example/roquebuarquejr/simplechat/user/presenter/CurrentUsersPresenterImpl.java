@@ -1,12 +1,14 @@
-package com.example.roquebuarquejr.simplechat.ui.adapter.users;
+package com.example.roquebuarquejr.simplechat.user.presenter;
 
 
 import com.example.roquebuarquejr.simplechat.model.User;
+import com.example.roquebuarquejr.simplechat.user.adapter.CurrentAdapterView;
+import com.example.roquebuarquejr.simplechat.user.interactor.CurrentUsersInteractor;
 
 import java.util.ArrayList;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public class CurrentUsersPresenterImpl implements CurrentUsersPresenter {
     private final CurrentAdapterView adapterView;

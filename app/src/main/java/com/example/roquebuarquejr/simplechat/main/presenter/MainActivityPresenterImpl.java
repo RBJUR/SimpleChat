@@ -1,8 +1,8 @@
-package com.example.roquebuarquejr.simplechat.ui.main.presenter;
+package com.example.roquebuarquejr.simplechat.main.presenter;
 
 
-import com.example.roquebuarquejr.simplechat.ui.main.interactor.MainInteractor;
-import com.example.roquebuarquejr.simplechat.ui.main.view.MainView;
+import com.example.roquebuarquejr.simplechat.main.interactor.MainInteractor;
+import com.example.roquebuarquejr.simplechat.main.view.MainView;
 
 /**
  * Created by roque

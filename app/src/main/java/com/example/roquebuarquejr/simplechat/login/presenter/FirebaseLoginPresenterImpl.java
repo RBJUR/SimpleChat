@@ -1,8 +1,8 @@
-package com.example.roquebuarquejr.simplechat.ui.login.presenter;
+package com.example.roquebuarquejr.simplechat.login.presenter;
 
 
-import com.example.roquebuarquejr.simplechat.ui.login.interactor.LoginInteractor;
-import com.example.roquebuarquejr.simplechat.ui.login.view.LoginView;
+import com.example.roquebuarquejr.simplechat.login.interactor.LoginInteractor;
+import com.example.roquebuarquejr.simplechat.login.view.LoginView;
 
 /**
  * Created by roque

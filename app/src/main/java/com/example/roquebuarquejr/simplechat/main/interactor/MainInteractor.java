@@ -1,6 +1,6 @@
-package com.example.roquebuarquejr.simplechat.ui.main.interactor;
+package com.example.roquebuarquejr.simplechat.main.interactor;
 
-import com.example.roquebuarquejr.simplechat.ui.main.presenter.MainPresenter;
+import com.example.roquebuarquejr.simplechat.main.presenter.MainPresenter;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;

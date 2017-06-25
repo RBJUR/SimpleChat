@@ -10,7 +10,7 @@ import com.example.roquebuarquejr.simplechat.R;
 
 
 /**
- * Created by Filip on 26/02/2016.
+ * Created by roque
  */
 //shows a list of emoji to choose from -- used as an avatar
 public class EmojiRecyclerAdapter extends RecyclerView.Adapter<EmojiRecyclerAdapter.ViewHolder> {

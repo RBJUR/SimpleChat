@@ -1,4 +1,4 @@
-package com.example.roquebuarquejr.simplechat.ui.main.view;
+package com.example.roquebuarquejr.simplechat.main.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.ui.login.view.LoginActivity;
-import com.example.roquebuarquejr.simplechat.ui.main.presenter.MainActivityPresenterImpl;
+import com.example.roquebuarquejr.simplechat.login.view.LoginActivity;
+import com.example.roquebuarquejr.simplechat.main.presenter.MainActivityPresenterImpl;
 import com.example.roquebuarquejr.simplechat.registration.view.RegisterActivity;
 import com.firebase.client.Firebase;
 

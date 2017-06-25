@@ -1,4 +1,4 @@
-package com.example.roquebuarquejr.simplechat.ui.login.view;
+package com.example.roquebuarquejr.simplechat.login.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.chat.view.ChatScreenActivity;
-import com.example.roquebuarquejr.simplechat.ui.login.presenter.FirebaseLoginPresenterImpl;
+import com.example.roquebuarquejr.simplechat.login.presenter.FirebaseLoginPresenterImpl;
 import com.firebase.client.Firebase;
 
 /**

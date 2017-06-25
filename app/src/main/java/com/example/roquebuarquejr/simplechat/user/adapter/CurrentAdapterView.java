@@ -1,4 +1,4 @@
-package com.example.roquebuarquejr.simplechat.ui.adapter.users;
+package com.example.roquebuarquejr.simplechat.user.adapter;
 
 
 import com.example.roquebuarquejr.simplechat.model.User;
@@ -6,7 +6,7 @@ import com.example.roquebuarquejr.simplechat.model.User;
 import java.util.ArrayList;
 
 /**
- * Created by Filip on 25/02/2016.
+ * Created by roque
  */
 public interface CurrentAdapterView {
     void addAll(ArrayList<User> users);

@@ -1,4 +1,4 @@
-package com.example.roquebuarquejr.simplechat.ui.main.view;
+package com.example.roquebuarquejr.simplechat.main.view;
 
 /**
  * Created by roque

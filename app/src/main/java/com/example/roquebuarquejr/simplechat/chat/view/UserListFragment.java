@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.ui.adapter.users.CustomUsersAdapter;
+import com.example.roquebuarquejr.simplechat.user.adapter.CustomUsersAdapter;
 
 
 /**
