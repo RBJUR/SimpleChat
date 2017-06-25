@@ -9,7 +9,7 @@ import com.firebase.client.ValueEventListener;
 /**
  * Created by roque
  */
-public class MainInteractor implements MInteractor {
+public class MainInteractor {
     private final Firebase mainRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers");
     private final MainPresenter presenter;
 
@@ -17,7 +17,6 @@ public class MainInteractor implements MInteractor {
         this.presenter = pre;
     }
 
-    @Override
     public void receiveRequest() {
         mainRef.addValueEventListener(new ValueEventListener() {
             @Override

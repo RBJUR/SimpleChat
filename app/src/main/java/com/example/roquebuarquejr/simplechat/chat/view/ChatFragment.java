@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.chat.adapter.CustomMessageRecyclerAdapter;
-import com.example.roquebuarquejr.simplechat.chat.presenter.FirebaseChatMessagePresenterImpl;
+import com.example.roquebuarquejr.simplechat.chat.presenter.ChatMessagePresenterImpl;
 
 /**
  * Created by roque
@@ -24,7 +24,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private EditText mEnterMessageEditText;
     private ImageButton mSendMessageButton;
     private CustomMessageRecyclerAdapter adapter;
-    private FirebaseChatMessagePresenterImpl presenter;
+    private ChatMessagePresenterImpl presenter;
 
     @Nullable
     @Override
@@ -63,7 +63,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
         mMessagesListView.setHasFixedSize(true);
         mMessagesListView.setItemAnimator(new DefaultItemAnimator());
         mMessagesListView.setAdapter(adapter);
-        presenter = new FirebaseChatMessagePresenterImpl();
+        presenter = new ChatMessagePresenterImpl();
     }
 
     private void handleMessageClick() {

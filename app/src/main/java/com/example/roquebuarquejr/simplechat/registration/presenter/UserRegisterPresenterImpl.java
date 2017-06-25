@@ -7,11 +7,11 @@ import com.example.roquebuarquejr.simplechat.registration.view.RegisterView;
 /**
  * Created by roque
  */
-public class FirebaseUserRegisterPresenterImpl implements FirebaseUserRegisterPresenter {
+public class UserRegisterPresenterImpl implements UserRegisterPresenter {
     private final RegisterView registerView;
     private final RegisterInteractor interactor;
 
-    public FirebaseUserRegisterPresenterImpl(RegisterView view) {
+    public UserRegisterPresenterImpl(RegisterView view) {
         this.registerView = view;
         this.interactor = new RegisterInteractor(this);
     }

@@ -6,10 +6,10 @@ import com.example.roquebuarquejr.simplechat.chat.interactor.ChatMessageInteract
 /**
  * Created by roque
  */
-public class FirebaseChatMessagePresenterImpl implements FirebaseChatMessagePresenter {
+public class ChatMessagePresenterImpl implements ChatMessagePresenter {
     private final ChatMessageInteractor interactor;
 
-    public FirebaseChatMessagePresenterImpl() {
+    public ChatMessagePresenterImpl() {
         this.interactor = new ChatMessageInteractor();
     }
 

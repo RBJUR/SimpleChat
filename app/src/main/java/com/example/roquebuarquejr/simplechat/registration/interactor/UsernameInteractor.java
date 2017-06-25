@@ -10,14 +10,13 @@ import com.firebase.client.ValueEventListener;
 /**
  * Created by roque
  */
-public class UsernameInteractor implements UInteractor {
+public class UsernameInteractor {
     private final UsernamePresenter presenter;
 
     public UsernameInteractor(UsernamePresenter pre) {
         this.presenter = pre;
     }
 
-    @Override
     public void checkIfUsernameExists(final String username) {
         Firebase userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users/");
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -3,7 +3,7 @@ package com.example.roquebuarquejr.simplechat.registration.interactor;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.roquebuarquejr.simplechat.registration.presenter.FirebaseUserRegisterPresenter;
+import com.example.roquebuarquejr.simplechat.registration.presenter.UserRegisterPresenter;
 import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -16,16 +16,15 @@ import java.util.Map;
 /**
  * Created by roque
  */
-public class RegisterInteractor implements RInteractor {
+public class RegisterInteractor {
     private Firebase userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users/");
-    private final FirebaseUserRegisterPresenter presenter;
+    private final UserRegisterPresenter presenter;
     private FirebaseAuth firebaseAuth;
 
-    public RegisterInteractor(FirebaseUserRegisterPresenter pre) {
+    public RegisterInteractor(UserRegisterPresenter pre) {
         this.presenter = pre;
     }
 
-    @Override
     public void receiveRegisterRequest(final String username, String email, String password, final String emoji) {
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -52,7 +51,6 @@ public class RegisterInteractor implements RInteractor {
 
     }
 
-    @Override
     public Map<String, Object> createUser(String username, String emoji) {
         Map<String, Object> user = new HashMap<>();
         user.put("username", username);

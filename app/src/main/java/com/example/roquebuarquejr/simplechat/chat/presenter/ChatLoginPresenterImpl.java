@@ -6,10 +6,10 @@ import com.example.roquebuarquejr.simplechat.chat.interactor.ChatLoginInteractor
 /**
  * Created by roque
  */
-public class FirebaseChatLoginPresenterImpl implements FirebaseChatLoginPresenter {
+public class ChatLoginPresenterImpl implements ChatLoginPresenter {
     private final ChatLoginInteractor interactor;
 
-    public FirebaseChatLoginPresenterImpl() {
+    public ChatLoginPresenterImpl() {
         this.interactor = new ChatLoginInteractor();
     }
 

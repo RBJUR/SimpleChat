@@ -11,14 +11,14 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.chat.presenter.FirebaseChatLoginPresenterImpl;
+import com.example.roquebuarquejr.simplechat.chat.presenter.ChatLoginPresenterImpl;
 import com.firebase.client.Firebase;
 
 /**
  * Created by roque
  */
 public class ChatScreenActivity extends AppCompatActivity {
-    private FirebaseChatLoginPresenterImpl presenter;
+    private ChatLoginPresenterImpl presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class ChatScreenActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.chat_activity_frame_layout, new ChatFragment(), "chat");
         transaction.commit();
-        presenter = new FirebaseChatLoginPresenterImpl();
+        presenter = new ChatLoginPresenterImpl();
     }
 
     @Override

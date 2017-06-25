@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.registration.presenter.FirebaseUserRegisterPresenterImpl;
+import com.example.roquebuarquejr.simplechat.registration.presenter.UserRegisterPresenterImpl;
 
 
 /**
@@ -23,7 +23,7 @@ public class ChooseEmailFragment extends Fragment implements View.OnClickListene
     private EditText mEmailEditText;
     private EditText mPasswordEditText;
     private Button mRegisterButton;
-    private FirebaseUserRegisterPresenterImpl presenter;
+    private UserRegisterPresenterImpl presenter;
 
     public static ChooseEmailFragment newInstance(Bundle data) {
         ChooseEmailFragment f = new ChooseEmailFragment();
@@ -46,7 +46,7 @@ public class ChooseEmailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onStart() {
         super.onStart();
-        presenter = new FirebaseUserRegisterPresenterImpl(this);
+        presenter = new UserRegisterPresenterImpl(this);
     }
 
     private void createUIWidgets(View view) {
