@@ -2,7 +2,6 @@ package com.example.roquebuarquejr.simplechat.chat.presenter;
 
 
 import com.example.roquebuarquejr.simplechat.chat.adapter.MessageAdapterView;
-import com.example.roquebuarquejr.simplechat.chat.adapter.MessageInteractor;
 import com.example.roquebuarquejr.simplechat.chat.interactor.ChatMessageInteractor;
 import com.example.roquebuarquejr.simplechat.model.Message;
 

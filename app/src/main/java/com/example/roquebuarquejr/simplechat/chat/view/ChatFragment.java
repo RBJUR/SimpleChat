@@ -15,11 +15,9 @@ import android.widget.ImageButton;
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.chat.adapter.CustomMessageRecyclerAdapter;
 import com.example.roquebuarquejr.simplechat.chat.adapter.MessageAdapterView;
-import com.example.roquebuarquejr.simplechat.chat.adapter.MessagePresenterImpl;
 import com.example.roquebuarquejr.simplechat.chat.presenter.ChatMessagePresenterImpl;
 import com.example.roquebuarquejr.simplechat.model.Message;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,11 +44,6 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
         createUI(view);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        fillUI();
-    }
 
     @Override
     public void onClick(View v) {
@@ -58,6 +51,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
     }
 
     private void createUI(View view) {
+        presenter = new ChatMessagePresenterImpl(this);
         mMessagesListView = (RecyclerView) view.findViewById(R.id.chat_recycler_view);
         mEnterMessageEditText = (EditText) view.findViewById(R.id.chat_edit_text);
         mSendMessageButton = (ImageButton) view.findViewById(R.id.chat_send_button);
@@ -66,9 +60,6 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
 
     }
 
-    private void fillUI() {
-        presenter = new ChatMessagePresenterImpl(this);
-    }
 
     private void populateList() {
         adapter = new CustomMessageRecyclerAdapter(getActivity().getIntent().getStringExtra("username"), mMessageList);
