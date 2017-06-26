@@ -13,6 +13,12 @@ public class Message implements Serializable {
     public Message() {
     }
 
+    public Message(String author, String message, String emoji) {
+        this.author = author;
+        this.message = message;
+        this.emoji = emoji;
+    }
+
     public String getAuthor() {
         return author;
     }

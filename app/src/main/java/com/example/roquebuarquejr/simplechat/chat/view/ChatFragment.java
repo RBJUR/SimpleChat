@@ -64,10 +64,8 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
     private void populateList() {
         adapter = new CustomMessageRecyclerAdapter(getActivity().getIntent().getStringExtra("username"), mMessageList);
         mMessagesListView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mMessagesListView.setHasFixedSize(true);
-        mMessagesListView.setItemAnimator(new DefaultItemAnimator());
         mMessagesListView.setAdapter(adapter);
-        mMessagesListView.scrollToPosition(adapter.getItemCount());
+        mMessagesListView.scrollToPosition(adapter.getItemCount() - 1);
     }
 
     private void handleMessageClick() {

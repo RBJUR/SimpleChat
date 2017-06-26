@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface ChatMessagePresenter {
     void sendMessage(String author, String message, String emoji);
+    void addNewMessage(Message message);
     void listMessages(List<Message> messages);
     void requestMessages();
 }
