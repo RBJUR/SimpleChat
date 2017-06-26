@@ -1,5 +1,7 @@
 package com.example.roquebuarquejr.simplechat.chat.view;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -18,14 +20,24 @@ import com.firebase.client.Firebase;
  * Created by roque
  */
 public class ChatScreenActivity extends AppCompatActivity {
+
+    private static final String EXTRA_USER_ID = "EXTRA_UID";
+    private static final String EXTRA_USER_NAME = "EXTRA_USER_NAME";
+
     private ChatLoginPresenterImpl presenter;
+
+    public static Intent getStartIntent(Context context, String uid, String name){
+        Intent intent = new Intent(context, ChatScreenActivity.class);
+        intent.putExtra(EXTRA_USER_ID, uid);
+        intent.putExtra(EXTRA_USER_NAME, name);
+        return intent;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_service);
         Firebase.setAndroidContext(this);
-        Toast.makeText(ChatScreenActivity.this, "Welcome, " + getIntent().getStringExtra("username") + "!", Toast.LENGTH_SHORT).show();
     }
 
     @Override

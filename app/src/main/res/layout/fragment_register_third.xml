@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="@string/e_g_firebase_admin_admin_com"
+        android:textColor="@color/white"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/white" />
 
@@ -50,12 +51,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/e_g_password12345"
+        android:textColor="@color/white"
         android:inputType="textPassword"
         android:textColorHint="@color/white" />
 
     <Button
         android:id="@id/register_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5sp"

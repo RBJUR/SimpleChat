@@ -24,12 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="@string/e_g_username"
+        android:textColor="@color/white"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/continue_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"

@@ -42,7 +42,7 @@ public class LoginInteractor {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                     User user = dataSnapshot.getValue(User.class);
-                                    Firebase loggedUser = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers/" + user.getUid()); //redundant?
+                                    Firebase loggedUser = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers/" + user.getUid());
                                     loggedUser.setValue(createUser(user.getUsername(), user.getEmoji()));
                                     presenter.onSuccess(user.getUsername(), user.getUid(), user.getEmoji());
                                 }

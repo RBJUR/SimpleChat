@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
     @Override
     public void logTheUserIn(String username, String uid, String emoji) {
         Intent i = new Intent(this, ChatScreenActivity.class);
-        i.putExtra("uid", uid); //uid not key
+        i.putExtra("uid", uid);
         i.putExtra("username", username);
         i.putExtra("emoji", emoji);
         startActivity(i);

@@ -11,11 +11,11 @@
     <string name="enter_a_message">Digite uma mensagem</string>
     <string name="on_failure_message">Request failed!</string>
     <string name="log_into_chat_service">Login</string>
-    <string name="create_a_new_user">Novo usuário</string>
+    <string name="create_a_new_user">Cadastro</string>
     <string name="choose_an_entry_option">Escolha uma opção.</string>
     <string name="online_users">Usuários online </string>
     <string name="current_online_users_by_username">Current online users by username:</string>
-    <string name="continue_with_register">Continue</string>
+    <string name="continue_with_register">Continuar</string>
     <string name="choose_an_emoji_to_represent_your_avatar">Escolha um emoji</string>
     <string name="register_failure">Seu cadastro falhou</string>
     <string name="register_success">Sucesso!</string>
