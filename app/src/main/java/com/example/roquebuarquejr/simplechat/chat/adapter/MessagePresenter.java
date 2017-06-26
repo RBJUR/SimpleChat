@@ -9,7 +9,6 @@ import java.util.List;
  * Created by roque
  */
 public interface MessagePresenter {
-    void sendMessageToAdapter(Message message);
     void listMessages(List<Message> messages);
     void requestMessages();
 }

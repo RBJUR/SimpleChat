@@ -17,10 +17,6 @@ public class MessagePresenterImpl implements MessagePresenter {
         this.interactor = new MessageInteractor(this);
     }
 
-    @Override
-    public void sendMessageToAdapter(Message message) {
-        adapterView.addItem(message);
-    }
 
     @Override
     public void listMessages(List<Message> messages) {

@@ -31,7 +31,6 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
     private ImageButton mSendMessageButton;
     private CustomMessageRecyclerAdapter adapter;
     private ChatMessagePresenterImpl presenter;
-    private MessagePresenterImpl messagePresenter;
     private List<Message> mMessageList;
 
 
@@ -63,13 +62,12 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
         mEnterMessageEditText = (EditText) view.findViewById(R.id.chat_edit_text);
         mSendMessageButton = (ImageButton) view.findViewById(R.id.chat_send_button);
         mSendMessageButton.setOnClickListener(this);
-        messagePresenter = new MessagePresenterImpl(this);
         request();
 
     }
 
     private void fillUI() {
-        presenter = new ChatMessagePresenterImpl();
+        presenter = new ChatMessagePresenterImpl(this);
     }
 
     private void populateList() {
@@ -84,7 +82,6 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
     private void handleMessageClick() {
         presenter.sendMessage(getActivity().getIntent().getStringExtra("username"), mEnterMessageEditText.getText().toString(), getActivity().getIntent().getStringExtra("emoji"));
         mEnterMessageEditText.setText("");
-        mMessagesListView.scrollToPosition(adapter.getItemCount());
     }
 
     @Override
@@ -95,7 +92,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener, Mess
 
     @Override
     public void request() {
-        messagePresenter.requestMessages();
+        presenter.requestMessages();
     }
 
     @Override
