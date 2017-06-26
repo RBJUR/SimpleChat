@@ -14,17 +14,26 @@ import android.widget.ImageButton;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.chat.adapter.CustomMessageRecyclerAdapter;
+import com.example.roquebuarquejr.simplechat.chat.adapter.MessageAdapterView;
+import com.example.roquebuarquejr.simplechat.chat.adapter.MessagePresenterImpl;
 import com.example.roquebuarquejr.simplechat.chat.presenter.ChatMessagePresenterImpl;
+import com.example.roquebuarquejr.simplechat.model.Message;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by roque
  */
-public class ChatFragment extends Fragment implements View.OnClickListener {
+public class ChatFragment extends Fragment implements View.OnClickListener, MessageAdapterView {
     private RecyclerView mMessagesListView;
     private EditText mEnterMessageEditText;
     private ImageButton mSendMessageButton;
     private CustomMessageRecyclerAdapter adapter;
     private ChatMessagePresenterImpl presenter;
+    private MessagePresenterImpl messagePresenter;
+    private List<Message> mMessageList;
+
 
     @Nullable
     @Override
@@ -54,21 +63,44 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
         mEnterMessageEditText = (EditText) view.findViewById(R.id.chat_edit_text);
         mSendMessageButton = (ImageButton) view.findViewById(R.id.chat_send_button);
         mSendMessageButton.setOnClickListener(this);
+        messagePresenter = new MessagePresenterImpl(this);
+        request();
+
     }
 
     private void fillUI() {
-        adapter = new CustomMessageRecyclerAdapter(getActivity().getIntent().getStringExtra("username"));
-        adapter.request();
+        presenter = new ChatMessagePresenterImpl();
+    }
+
+    private void populateList() {
+        adapter = new CustomMessageRecyclerAdapter(getActivity().getIntent().getStringExtra("username"), mMessageList);
         mMessagesListView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mMessagesListView.setHasFixedSize(true);
         mMessagesListView.setItemAnimator(new DefaultItemAnimator());
         mMessagesListView.setAdapter(adapter);
-        presenter = new ChatMessagePresenterImpl();
+        mMessagesListView.scrollToPosition(adapter.getItemCount());
     }
 
     private void handleMessageClick() {
         presenter.sendMessage(getActivity().getIntent().getStringExtra("username"), mEnterMessageEditText.getText().toString(), getActivity().getIntent().getStringExtra("emoji"));
         mEnterMessageEditText.setText("");
-        mMessagesListView.scrollToPosition(mMessagesListView.getBottom());
+        mMessagesListView.scrollToPosition(adapter.getItemCount());
+    }
+
+    @Override
+    public void addItem(Message message) {
+        mMessageList.add(message);
+        populateList();
+    }
+
+    @Override
+    public void request() {
+        messagePresenter.requestMessages();
+    }
+
+    @Override
+    public void listMessages(List<Message> messages) {
+        mMessageList = messages;
+        populateList();
     }
 }

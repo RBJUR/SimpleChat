@@ -11,18 +11,18 @@ import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.model.Message;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by roque
  */
-public class CustomMessageRecyclerAdapter extends RecyclerView.Adapter<CustomMessageRecyclerAdapter.ViewHolder> implements MessageAdapterView {
-    private final ArrayList<Message> mMessageList = new ArrayList<>();
+public class CustomMessageRecyclerAdapter extends RecyclerView.Adapter<CustomMessageRecyclerAdapter.ViewHolder> {
+    private List<Message> mMessageList = new ArrayList<>();
     private final String user;
-    private final MessagePresenterImpl presenter;
 
-    public CustomMessageRecyclerAdapter(String username) {
+    public CustomMessageRecyclerAdapter(String username, List<Message> messages) {
         this.user = username;
-        presenter = new MessagePresenterImpl(this);
+        mMessageList = messages;
     }
 
     @Override
@@ -48,17 +48,6 @@ public class CustomMessageRecyclerAdapter extends RecyclerView.Adapter<CustomMes
         return mMessageList.size();
     }
 
-
-    @Override
-    public void addItem(Message message) {
-        mMessageList.add(message);
-        notifyDataSetChanged();
-    }
-
-    @Override
-    public void request() {
-        presenter.requestMessages();
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mAuthorTextView;
