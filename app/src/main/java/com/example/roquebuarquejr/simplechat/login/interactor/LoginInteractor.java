@@ -43,8 +43,8 @@ public class LoginInteractor {
                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                     User user = dataSnapshot.getValue(User.class);
                                     Firebase loggedUser = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers/" + user.getUid());
-                                    loggedUser.setValue(createUser(user.getUsername(), user.getEmoji()));
-                                    presenter.onSuccess(user.getUsername(), user.getUid(), user.getEmoji());
+                                    loggedUser.setValue(createUser(user.getUsername()));
+                                    presenter.onSuccess(user.getUsername(), user.getUid());
                                 }
 
                                 @Override
@@ -61,10 +61,9 @@ public class LoginInteractor {
            }
 
 
-    public Map<String, Object> createUser(String user, String emoji) {
+    public Map<String, Object> createUser(String user){
         Map<String, Object> userToCreate = new HashMap<>();
         userToCreate.put("username", user);
-        userToCreate.put("emoji", emoji);
         return userToCreate;
     }
 }

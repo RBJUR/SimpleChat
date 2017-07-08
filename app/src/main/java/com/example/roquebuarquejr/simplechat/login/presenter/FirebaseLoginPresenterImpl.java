@@ -29,8 +29,8 @@ public class FirebaseLoginPresenterImpl implements FirebaseLoginPresenter {
     }
 
     @Override
-    public void onSuccess(String user, String uid, String emoji) {
+    public void onSuccess(String user, String uid) {
         loginView.stopProgressBar();
-        loginView.logTheUserIn(user, uid, emoji);
+        loginView.logTheUserIn(user, uid);
     }
 }

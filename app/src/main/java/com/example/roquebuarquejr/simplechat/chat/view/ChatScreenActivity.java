@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
+import com.example.roquebuarquejr.simplechat.chat.interactor.ChatLoginInteractor;
 import com.example.roquebuarquejr.simplechat.chat.presenter.ChatLoginPresenterImpl;
 import com.firebase.client.Firebase;
 

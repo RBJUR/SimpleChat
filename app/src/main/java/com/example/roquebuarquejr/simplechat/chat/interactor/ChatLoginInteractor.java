@@ -11,4 +11,5 @@ public class ChatLoginInteractor  {
         Firebase userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers/" + uid);
         userRef.removeValue();
     }
+
 }
