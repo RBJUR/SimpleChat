@@ -29,7 +29,18 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/online_user_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
         android:layout_below="@id/current_users_text_view"
+        android:layout_margin="10dp"
         android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Entrar" />
+
 </RelativeLayout>

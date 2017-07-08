@@ -51,23 +51,6 @@ public class ChatScreenActivity extends AppCompatActivity {
         presenter = new ChatLoginPresenterImpl();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_chat, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        FragmentManager manager = getSupportFragmentManager();
-        if (manager.getBackStackEntryCount() == 0) {
-            manager.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).replace(R.id.chat_activity_frame_layout, new UserListFragment(), "list").addToBackStack("list").commit();
-        } else if (manager.getBackStackEntryCount() != 0) {
-            manager.popBackStack();
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onDestroy() {
