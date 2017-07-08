@@ -29,6 +29,9 @@
         <activity
             android:name=".login.view.LoginActivity"
             android:parentActivityName=".main.view.MainActivity" />
+        <activity
+            android:name=".chat.view.UserListActivity"
+            android:parentActivityName=".login.view.LoginActivity" />
     </application>
 
 </manifest>

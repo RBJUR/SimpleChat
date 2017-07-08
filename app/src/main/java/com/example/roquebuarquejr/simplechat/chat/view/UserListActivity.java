@@ -8,10 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.user.adapter.CustomUsersAdapter;
+import com.example.roquebuarquejr.simplechat.user.adapter.UsersAdapter;
 
 /**
  * Created by roquebuarquejr on 08/07/17.
@@ -20,7 +19,7 @@ import com.example.roquebuarquejr.simplechat.user.adapter.CustomUsersAdapter;
 public class UserListActivity  extends AppCompatActivity {
 
     private RecyclerView userList;
-    private CustomUsersAdapter adapter;
+    private UsersAdapter adapter;
 
     public static Intent getStartIntent(Context context){
         return new Intent(context, UserListActivity.class);
@@ -29,13 +28,13 @@ public class UserListActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_online_users_list);
+        setContentView(R.layout.activity_users_list);
         createUI();
         fillUI();
     }
 
     private void fillUI() {
-        adapter = new CustomUsersAdapter();
+        adapter = new UsersAdapter();
         adapter.request();
         userList.setAdapter(adapter);
     }

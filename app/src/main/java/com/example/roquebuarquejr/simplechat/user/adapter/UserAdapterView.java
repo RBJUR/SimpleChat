@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by roque
  */
-public interface CurrentAdapterView {
+public interface UserAdapterView {
     void addAll(ArrayList<User> users);
     void request();
 }

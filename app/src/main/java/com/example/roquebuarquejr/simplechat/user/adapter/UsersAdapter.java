@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.model.User;
-import com.example.roquebuarquejr.simplechat.user.presenter.CurrentUsersPresenterImpl;
+import com.example.roquebuarquejr.simplechat.user.presenter.UsersPresenterImpl;
 
 import java.util.ArrayList;
 
@@ -17,13 +17,12 @@ import java.util.ArrayList;
  * Created by roque
  */
 
-// Shows current online users in a list(by username)
-public class CustomUsersAdapter extends RecyclerView.Adapter<CustomUsersAdapter.ViewHolder> implements CurrentAdapterView {
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> implements UserAdapterView {
     private final ArrayList<User> mUserList = new ArrayList<>();
-    private final CurrentUsersPresenterImpl presenter;
+    private final UsersPresenterImpl presenter;
 
-    public CustomUsersAdapter() {
-        this.presenter = new CurrentUsersPresenterImpl(this);
+    public UsersAdapter() {
+        this.presenter = new UsersPresenterImpl(this);
     }
 
     @Override

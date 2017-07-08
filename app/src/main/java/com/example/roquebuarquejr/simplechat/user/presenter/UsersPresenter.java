@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by roque
  */
-public interface CurrentUsersPresenter {
+public interface UsersPresenter {
     void getChildren(ArrayList<User> users);
     void request();
 }
