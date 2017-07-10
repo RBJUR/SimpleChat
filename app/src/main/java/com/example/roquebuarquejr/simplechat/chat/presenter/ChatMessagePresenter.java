@@ -9,7 +9,7 @@ import java.util.List;
  * Created by roque
  */
 public interface ChatMessagePresenter {
-    void sendMessage(String author, String message, String emoji);
+    void sendMessage(String author, String message);
     void addNewMessage(Message message);
     void listMessages(List<Message> messages);
     void requestMessages();

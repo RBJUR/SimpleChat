@@ -40,7 +40,6 @@ public class CustomMessageRecyclerAdapter extends RecyclerView.Adapter<CustomMes
             holder.mAuthorTextView.setText(current.getAuthor());
         }
         holder.mMessageTextView.setText(current.getMessage());
-        holder.mEmojiTextView.setText(current.getEmoji());
     }
 
     @Override
@@ -52,13 +51,11 @@ public class CustomMessageRecyclerAdapter extends RecyclerView.Adapter<CustomMes
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mAuthorTextView;
         private TextView mMessageTextView;
-        private TextView mEmojiTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             mAuthorTextView = (TextView) itemView.findViewById(R.id.message_author);
             mMessageTextView = (TextView) itemView.findViewById(R.id.message_value);
-            mEmojiTextView = (TextView) itemView.findViewById(R.id.message_emoji);
         }
     }
 }

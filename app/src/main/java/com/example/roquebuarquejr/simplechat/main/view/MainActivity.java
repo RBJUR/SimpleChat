@@ -10,18 +10,15 @@ import android.widget.TextView;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.login.view.LoginActivity;
-import com.example.roquebuarquejr.simplechat.main.presenter.MainActivityPresenterImpl;
 import com.example.roquebuarquejr.simplechat.registration.view.RegisterActivity;
 import com.firebase.client.Firebase;
 
 /**
  * Created by roque
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, MainView {
-    private TextView mOnlineUsers;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mLoginButton;
     private Button mRegisterButton;
-    private MainActivityPresenterImpl presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,15 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setUI();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        presenter = new MainActivityPresenterImpl(this);
-        presenter.receiveRequest();
-    }
 
     private void setUI() {
-        mOnlineUsers = (TextView) findViewById(R.id.current_number_of_users_text_view);
         mLoginButton = (Button) findViewById(R.id.login_button);
         mRegisterButton = (Button) findViewById(R.id.register_button);
 
@@ -57,8 +47,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @Override
-    public void setNumberOfUsersTextView(String numberOfUsers) {
-        mOnlineUsers.setText(numberOfUsers);
-    }
+
 }

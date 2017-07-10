@@ -8,15 +8,13 @@ import java.io.Serializable;
 public class Message implements Serializable {
     private String author;
     private String message;
-    private String emoji;
 
     public Message() {
     }
 
-    public Message(String author, String message, String emoji) {
+    public Message(String author, String message) {
         this.author = author;
         this.message = message;
-        this.emoji = emoji;
     }
 
     public String getAuthor() {
@@ -35,11 +33,4 @@ public class Message implements Serializable {
         this.message = message;
     }
 
-    public String getEmoji() {
-        return emoji;
-    }
-
-    public void setEmoji(String emoji) {
-        this.emoji = emoji;
-    }
 }

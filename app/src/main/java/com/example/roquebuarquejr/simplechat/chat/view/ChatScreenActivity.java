@@ -7,14 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.chat.interactor.ChatLoginInteractor;
-import com.example.roquebuarquejr.simplechat.chat.presenter.ChatLoginPresenterImpl;
 import com.firebase.client.Firebase;
 
 /**
@@ -24,8 +18,6 @@ public class ChatScreenActivity extends AppCompatActivity {
 
     private static final String EXTRA_USER_ID = "EXTRA_UID";
     private static final String EXTRA_USER_NAME = "EXTRA_USER_NAME";
-
-    private ChatLoginPresenterImpl presenter;
 
     public static Intent getStartIntent(Context context, String uid, String name){
         Intent intent = new Intent(context, ChatScreenActivity.class);
@@ -48,13 +40,7 @@ public class ChatScreenActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.chat_activity_frame_layout, new ChatFragment(), "chat");
         transaction.commit();
-        presenter = new ChatLoginPresenterImpl();
     }
 
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.removeUserFromCurrentUsers(getIntent().getStringExtra("uid"));
-    }
 }

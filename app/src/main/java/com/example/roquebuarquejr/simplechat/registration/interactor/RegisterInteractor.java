@@ -25,21 +25,18 @@ public class RegisterInteractor {
         this.presenter = pre;
     }
 
-    public void receiveRegisterRequest(final String username, String email, String password, final String emoji) {
+    public void receiveRegisterRequest(final String username, String email, String password) {
         firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
                         if (task.isSuccessful()) {
                             AuthResult result = task.getResult();
                             String uid = result.getUser().getUid();
                             userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users/" + uid);
-                            userRef.setValue(createUser(username, emoji));
+                            userRef.setValue(createUser(username));
                             presenter.onSuccess();
                         } else {
                             Log.d("AuthFail", task.getException().toString());
@@ -51,10 +48,9 @@ public class RegisterInteractor {
 
     }
 
-    public Map<String, Object> createUser(String username, String emoji) {
+    public Map<String, Object> createUser(String username) {
         Map<String, Object> user = new HashMap<>();
         user.put("username", username);
-        user.put("emoji", emoji);
         return user;
     }
 }

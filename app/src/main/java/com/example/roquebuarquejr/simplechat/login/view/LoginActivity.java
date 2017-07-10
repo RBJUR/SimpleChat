@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
 
     @Override
     public void logTheUserIn(String username, String uid) {
-        Intent i = new Intent(this, UserListActivity.class);
+        Intent i = new Intent(this, ChatScreenActivity.class);
         i.putExtra("uid", uid);
         i.putExtra("username", username);
         startActivity(i);

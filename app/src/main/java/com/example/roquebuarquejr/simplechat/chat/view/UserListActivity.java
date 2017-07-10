@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.user.adapter.UsersAdapter;
+import com.firebase.client.Firebase;
 
 /**
  * Created by roquebuarquejr on 08/07/17.
@@ -29,6 +30,7 @@ public class UserListActivity  extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
+        Firebase.setAndroidContext(this);
         createUI();
         fillUI();
     }

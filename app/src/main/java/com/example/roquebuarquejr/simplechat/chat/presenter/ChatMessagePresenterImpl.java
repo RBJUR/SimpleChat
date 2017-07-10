@@ -31,9 +31,9 @@ public class ChatMessagePresenterImpl implements ChatMessagePresenter {
     }
 
     @Override
-    public void sendMessage(String author, String message, String emoji) {
-        interactor.pushMessageToFirebase(author, message, emoji);
-        addNewMessage(new Message(author, message, emoji));
+    public void sendMessage(String author, String message) {
+        interactor.pushMessageToFirebase(author, message);
+        addNewMessage(new Message(author, message));
     }
 
     @Override

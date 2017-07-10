@@ -26,22 +26,20 @@ public class ChatMessageInteractor  {
     }
 
 
-    public void pushMessageToFirebase(String author, String message, String emoji) {
+    public void pushMessageToFirebase(String author, String message) {
         Firebase messageRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/messages");
-        messageRef.push().setValue(createMessage(message, author, emoji));
+        messageRef.push().setValue(createMessage(message, author));
     }
 
-    public Map<String, Object> createMessage(String message, String author, String emoji) {
+    public Map<String, Object> createMessage(String message, String author) {
         Map<String, Object> values = new HashMap<>();
         values.put("message", message);
         values.put("author", author);
-        values.put("emoji", emoji);
         return values;
     }
 
     public void request() {
 
-        //You can use the single or the value.. depending if you want to keep track
         mMessagesRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
