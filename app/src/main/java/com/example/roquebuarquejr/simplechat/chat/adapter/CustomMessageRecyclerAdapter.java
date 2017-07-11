@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 
 import com.example.roquebuarquejr.simplechat.R;
+import com.example.roquebuarquejr.simplechat.chat.presenter.MessagePresenterImpl;
 import com.example.roquebuarquejr.simplechat.model.Message;
 
 import java.util.ArrayList;

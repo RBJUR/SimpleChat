@@ -1,4 +1,4 @@
-package com.example.roquebuarquejr.simplechat.chat.adapter;
+package com.example.roquebuarquejr.simplechat.chat.presenter;
 
 
 import com.example.roquebuarquejr.simplechat.model.Message;

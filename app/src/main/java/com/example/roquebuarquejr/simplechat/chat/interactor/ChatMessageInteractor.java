@@ -11,8 +11,12 @@ import java.util.Map;
 //pushes a message to Firebase on every onClick method usage
 public class ChatMessageInteractor  {
 
-    public void pushMessageToFirebase(String author, String message) {
-        Firebase messageRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/messages");
+    public void pushMessageToFirebase(String author, String message, String id) {
+        String url = "https://simple-chat-6d9bd.firebaseio.com/messages";
+        if(id != null && !id.isEmpty()){
+            url.concat("/id");
+        }
+        Firebase messageRef = new Firebase(url);
         messageRef.push().setValue(createMessage(message, author));
     }
 

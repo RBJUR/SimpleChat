@@ -1,5 +1,6 @@
-package com.example.roquebuarquejr.simplechat.chat.adapter;
+package com.example.roquebuarquejr.simplechat.chat.interactor;
 
+import com.example.roquebuarquejr.simplechat.chat.presenter.MessagePresenter;
 import com.example.roquebuarquejr.simplechat.model.Message;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;

@@ -12,17 +12,22 @@ import com.example.roquebuarquejr.simplechat.model.User;
 import com.example.roquebuarquejr.simplechat.user.presenter.CurrentUsersPresenterImpl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by roque
  */
 
-public class CustomUsersAdapter extends RecyclerView.Adapter<CustomUsersAdapter.ViewHolder> implements CurrentAdapterView {
-    private final ArrayList<User> mUserList = new ArrayList<>();
-    private final CurrentUsersPresenterImpl presenter;
+public class CustomUsersAdapter extends RecyclerView.Adapter<CustomUsersAdapter.ViewHolder>  {
 
-    public CustomUsersAdapter() {
-        this.presenter = new CurrentUsersPresenterImpl(this);
+    private final View.OnClickListener onClickListener;
+    private List<User> mUserList;
+
+    public CustomUsersAdapter(List<User> userList, View.OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+        this.mUserList = userList;
+        notifyDataSetChanged();
+
     }
 
     @Override
@@ -42,17 +47,6 @@ public class CustomUsersAdapter extends RecyclerView.Adapter<CustomUsersAdapter.
         return mUserList.size();
     }
 
-    @Override
-    public void addAll(ArrayList<User> users) {
-        mUserList.clear();
-        mUserList.addAll(users);
-        notifyDataSetChanged();
-    }
-
-    @Override
-    public void request() {
-        presenter.request();
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mUserTextView;

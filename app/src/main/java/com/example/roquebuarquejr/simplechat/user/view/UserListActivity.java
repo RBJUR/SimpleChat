@@ -8,21 +8,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
+import com.example.roquebuarquejr.simplechat.model.User;
 import com.example.roquebuarquejr.simplechat.user.adapter.CustomUsersAdapter;
+import com.example.roquebuarquejr.simplechat.user.adapter.UserAdapterView;
+import com.example.roquebuarquejr.simplechat.user.presenter.CurrentUsersPresenterImpl;
+
+import java.util.ArrayList;
+
 
 /**
  * Created by roquebuarquejr on 11/07/17.
  */
 
-public class UserListActivity extends AppCompatActivity {
+public class UserListActivity extends AppCompatActivity implements View.OnClickListener, UserAdapterView {
 
     private static final String EXTRA_USER_ID = "EXTRA_USER_ID";
     private static final String EXTRA_USER_NAME = "EXTRA_USER_NAME";
 
-    private RecyclerView userList;
+    private RecyclerView recyclerView;
     private CustomUsersAdapter adapter;
+
+    private ArrayList<User> userList = new ArrayList<>();
+    private  CurrentUsersPresenterImpl presenter;
 
     public static Intent getStartIntent(Context context, String userId, String userName){
         Intent intent = new Intent(context, UserListActivity.class);
@@ -36,22 +47,39 @@ public class UserListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
+        presenter = new CurrentUsersPresenterImpl(this);
+        presenter.request();
+    }
 
+    @Override
+    public void onClick(View v) {
+        int itemPosition = recyclerView.getChildLayoutPosition(v);
+        User item = userList.get(itemPosition);
+        Toast.makeText(getApplicationContext(), item.getUsername(), Toast.LENGTH_LONG).show();
+
+    }
+
+    @Override
+    public void addAll(ArrayList<User> users) {
+        userList = users;
         bindFields();
 
     }
 
-    private void bindFields() {
-
-        userList = (RecyclerView) findViewById(R.id.online_user_recycler_view);
-        userList.setLayoutManager(new LinearLayoutManager(this));
-        userList.setHasFixedSize(true);
-        userList.setItemAnimator(new DefaultItemAnimator());
-
-        adapter = new CustomUsersAdapter();
-        adapter.request();
-        userList.setAdapter(adapter);
+    @Override
+    public void request() {
+        //DO NOTHING
     }
 
+    private void bindFields() {
+
+        recyclerView = (RecyclerView) findViewById(R.id.online_user_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        adapter = new CustomUsersAdapter(userList, this);
+        recyclerView.setAdapter(adapter);
+    }
 
 }
