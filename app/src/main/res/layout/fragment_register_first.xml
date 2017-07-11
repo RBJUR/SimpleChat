@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16sp"
-    android:background="@color/colorPrimaryDark">
+    android:padding="16sp">
 
 
     <TextView
@@ -15,7 +14,7 @@
         android:layout_margin="5sp"
         android:gravity="center"
         android:text="@string/choose_an_awesome_user_by_which_we_will_recognize_you"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <EditText
@@ -25,11 +24,12 @@
         android:layout_gravity="center"
         android:hint="@string/e_g_username"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/white" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <Button
         android:id="@+id/continue_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
