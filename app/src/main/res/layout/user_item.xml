@@ -8,13 +8,25 @@
     tools:background="@color/black">
 
     <TextView
-        android:id="@+id/user_item_text_view"
+        android:id="@+id/user_item_txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
         android:textColor="@color/white"
         android:textSize="20sp"
         tools:text="USER NAME" />
+
+    <TextView
+        android:id="@+id/user_item_txt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="user@email.com" />
 
     <View
         android:layout_width="match_parent"

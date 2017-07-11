@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
     private String username;
+    private String useremail;
     private String uid;
 
     public User() {
@@ -28,4 +29,11 @@ public class User implements Serializable {
         this.uid = uid;
     }
 
+    public String getUseremail() {
+        return useremail;
+    }
+
+    public void setUseremail(String useremail) {
+        this.useremail = useremail;
+    }
 }

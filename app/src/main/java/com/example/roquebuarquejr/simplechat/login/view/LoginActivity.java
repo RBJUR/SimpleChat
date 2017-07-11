@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.chat.view.ChatScreenActivity;
 import com.example.roquebuarquejr.simplechat.login.presenter.FirebaseLoginPresenterImpl;
 import com.example.roquebuarquejr.simplechat.user.view.UserListActivity;
 import com.firebase.client.Firebase;

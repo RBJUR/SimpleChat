@@ -12,10 +12,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
+import com.example.roquebuarquejr.simplechat.chat.view.ChatScreenActivity;
 import com.example.roquebuarquejr.simplechat.model.User;
 import com.example.roquebuarquejr.simplechat.user.adapter.CustomUsersAdapter;
 import com.example.roquebuarquejr.simplechat.user.adapter.UserAdapterView;
-import com.example.roquebuarquejr.simplechat.user.presenter.CurrentUsersPresenterImpl;
+import com.example.roquebuarquejr.simplechat.user.presenter.UsersPresenterImpl;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,7 @@ public class UserListActivity extends AppCompatActivity implements View.OnClickL
     private CustomUsersAdapter adapter;
 
     private ArrayList<User> userList = new ArrayList<>();
-    private  CurrentUsersPresenterImpl presenter;
+    private UsersPresenterImpl presenter;
 
     public static Intent getStartIntent(Context context, String userId, String userName){
         Intent intent = new Intent(context, UserListActivity.class);
@@ -47,7 +48,7 @@ public class UserListActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
-        presenter = new CurrentUsersPresenterImpl(this);
+        presenter = new UsersPresenterImpl(this);
         presenter.request();
     }
 
@@ -55,7 +56,7 @@ public class UserListActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         int itemPosition = recyclerView.getChildLayoutPosition(v);
         User item = userList.get(itemPosition);
-        Toast.makeText(getApplicationContext(), item.getUsername(), Toast.LENGTH_LONG).show();
+        startActivity(ChatScreenActivity.getStartIntent(this, item.getUsername()));
 
     }
 

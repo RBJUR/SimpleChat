@@ -20,11 +20,23 @@ import com.example.roquebuarquejr.simplechat.chat.presenter.ChatMessagePresenter
  * Created by roque
  */
 public class ChatFragment extends Fragment implements View.OnClickListener {
+
+    private static final String ARG_USER_NAME = "ARG_USER_NAME";
+
     private RecyclerView mMessagesListView;
     private EditText mEnterMessageEditText;
     private ImageButton mSendMessageButton;
     private CustomMessageRecyclerAdapter adapter;
     private ChatMessagePresenterImpl presenter;
+
+    public static ChatFragment newInstance(String userName){
+        ChatFragment fragment = new ChatFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(ARG_USER_NAME, userName);
+        fragment.setArguments(bundle);
+        return  fragment;
+
+    }
 
     @Nullable
     @Override

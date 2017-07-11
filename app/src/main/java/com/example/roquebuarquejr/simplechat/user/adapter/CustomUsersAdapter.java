@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.model.User;
-import com.example.roquebuarquejr.simplechat.user.presenter.CurrentUsersPresenterImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,7 +38,8 @@ public class CustomUsersAdapter extends RecyclerView.Adapter<CustomUsersAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         User current = mUserList.get(position);
-        holder.mUserTextView.setText(current.getUsername());
+        holder.txtUserName.setText(current.getUsername());
+        holder.txtUserEmail.setText(current.getUseremail());
     }
 
     @Override
@@ -50,12 +49,14 @@ public class CustomUsersAdapter extends RecyclerView.Adapter<CustomUsersAdapter.
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView mUserTextView;
+        private TextView txtUserName;
+        private TextView txtUserEmail;
         private LinearLayout ctnMain;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mUserTextView = (TextView) itemView.findViewById(R.id.user_item_text_view);
+            txtUserName = (TextView) itemView.findViewById(R.id.user_item_txt_name);
+            txtUserEmail = (TextView) itemView.findViewById(R.id.user_item_txt_email);
             ctnMain = (LinearLayout) itemView.findViewById(R.id.main);
             ctnMain.setOnClickListener(onClickListener);
         }
