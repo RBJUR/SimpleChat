@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.chat.view.ChatScreenActivity;
 import com.example.roquebuarquejr.simplechat.login.presenter.FirebaseLoginPresenterImpl;
+import com.example.roquebuarquejr.simplechat.user.view.UserListActivity;
 import com.firebase.client.Firebase;
 
 /**
@@ -35,10 +36,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
 
     @Override
     public void logTheUserIn(String username, String uid) {
-        Intent i = new Intent(this, ChatScreenActivity.class);
-        i.putExtra("uid", uid);
-        i.putExtra("username", username);
-        startActivity(i);
+        Intent intent = new Intent(this, UserListActivity.class);
+        intent.putExtra("uid", uid);
+        intent.putExtra("username", username);
+        startActivity(intent);
     }
 
     @Override

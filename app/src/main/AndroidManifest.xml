@@ -20,15 +20,10 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".chat.view.ChatScreenActivity"
-            android:parentActivityName=".login.view.LoginActivity" />
-        <activity
-            android:name=".registration.view.RegisterActivity"
-            android:parentActivityName=".main.view.MainActivity" />
-        <activity
-            android:name=".login.view.LoginActivity"
-            android:parentActivityName=".main.view.MainActivity" />
+        <activity android:name=".chat.view.ChatScreenActivity" />
+        <activity android:name=".registration.view.RegisterActivity" />
+        <activity android:name=".login.view.LoginActivity" />
+        <activity android:name=".user.view.UserListActivity" />
     </application>
 
 </manifest>

@@ -14,14 +14,14 @@ import java.util.ArrayList;
  */
 public class UsersInteractor {
     private final UsersPresenter presenter;
-    private final Firebase currentUsersRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users");
+    private final Firebase usersRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users");
 
     public UsersInteractor(UsersPresenter pre) {
         this.presenter = pre;
     }
 
     public void request() {
-        currentUsersRef.addValueEventListener(new ValueEventListener() {
+        usersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<User> mListOfUsers = new ArrayList<>();

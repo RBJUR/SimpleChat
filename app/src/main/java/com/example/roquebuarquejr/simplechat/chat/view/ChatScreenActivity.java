@@ -11,14 +11,12 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.roquebuarquejr.simplechat.R;
-import com.example.roquebuarquejr.simplechat.chat.presenter.ChatLoginPresenterImpl;
 import com.firebase.client.Firebase;
 
 /**
  * Created by roque
  */
 public class ChatScreenActivity extends AppCompatActivity {
-    private ChatLoginPresenterImpl presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,30 +33,6 @@ public class ChatScreenActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.chat_activity_frame_layout, new ChatFragment(), "chat");
         transaction.commit();
-        presenter = new ChatLoginPresenterImpl();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_chat, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        FragmentManager manager = getSupportFragmentManager();
-        if (manager.getBackStackEntryCount() == 0) {
-            manager.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).replace(R.id.chat_activity_frame_layout, new UserListFragment(), "list").addToBackStack("list").commit();
-        } else if (manager.getBackStackEntryCount() != 0) {
-            manager.popBackStack();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.removeUserFromCurrentUsers(getIntent().getStringExtra("uid"));
-    }
 }

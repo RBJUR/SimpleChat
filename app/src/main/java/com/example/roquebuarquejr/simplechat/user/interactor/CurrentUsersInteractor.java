@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class CurrentUsersInteractor {
     private final CurrentUsersPresenter presenter;
-    private final Firebase currentUsersRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers");
+    private final Firebase currentUsersRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users");
 
     public CurrentUsersInteractor(CurrentUsersPresenter pre) {
         this.presenter = pre;

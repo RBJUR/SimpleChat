@@ -10,7 +10,7 @@ import com.firebase.client.ValueEventListener;
  * Created by roque
  */
 public class MainInteractor {
-    private final Firebase mainRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/currentUsers");
+    private final Firebase mainRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users");
     private final MainPresenter presenter;
 
     public MainInteractor(MainPresenter pre) {

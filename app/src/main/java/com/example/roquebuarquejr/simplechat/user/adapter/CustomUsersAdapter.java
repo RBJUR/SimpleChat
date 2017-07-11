@@ -17,7 +17,6 @@ import java.util.ArrayList;
  * Created by roque
  */
 
-// Shows current online users in a list(by username)
 public class CustomUsersAdapter extends RecyclerView.Adapter<CustomUsersAdapter.ViewHolder> implements CurrentAdapterView {
     private final ArrayList<User> mUserList = new ArrayList<>();
     private final CurrentUsersPresenterImpl presenter;
