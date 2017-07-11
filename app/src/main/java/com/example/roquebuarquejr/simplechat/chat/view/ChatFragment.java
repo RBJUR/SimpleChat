@@ -67,7 +67,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     }
 
     private void handleMessageClick() {
-        presenter.sendMessage(getActivity().getIntent().getStringExtra("username"), mEnterMessageEditText.getText().toString(), getActivity().getIntent().getStringExtra("emoji"));
+        presenter.sendMessage(getActivity().getIntent().getStringExtra("username"), mEnterMessageEditText.getText().toString());
         mEnterMessageEditText.setText("");
         mMessagesListView.scrollToPosition(mMessagesListView.getBottom());
     }

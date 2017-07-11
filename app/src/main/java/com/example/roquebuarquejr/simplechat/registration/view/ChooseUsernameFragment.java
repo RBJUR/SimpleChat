@@ -58,7 +58,8 @@ public class ChooseUsernameFragment extends Fragment implements View.OnClickList
         Bundle data = new Bundle();
         data.putString("username", mUsernameEditText.getText().toString());
         FragmentManager manager = getActivity().getSupportFragmentManager();
-        manager.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).replace(R.id.register_activity_frame_layout, ChooseAnEmojiFragment.newInstance(data), "emoji").addToBackStack("emoji").commit();
+        manager.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).replace(R.id.register_activity_frame_layout, ChooseEmailFragment.newInstance(data), "email").addToBackStack("email").commit();
+
     }
 
     @Override

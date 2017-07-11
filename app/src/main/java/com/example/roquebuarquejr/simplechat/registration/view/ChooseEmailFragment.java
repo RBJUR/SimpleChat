@@ -60,7 +60,7 @@ public class ChooseEmailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         Bundle data = this.getArguments();
-        presenter.receiveRegisterRequest(data.getString("username"), mEmailEditText.getText().toString(), mPasswordEditText.getText().toString(), data.getString("emoji"));
+        presenter.receiveRegisterRequest(data.getString("username"), mEmailEditText.getText().toString(), mPasswordEditText.getText().toString());
     }
 
 

@@ -18,8 +18,8 @@ public class UserRegisterPresenterImpl implements UserRegisterPresenter {
 
 
     @Override
-    public void receiveRegisterRequest(String username, String email, String password, String emoji) {
-        interactor.receiveRegisterRequest(username, email, password, emoji);
+    public void receiveRegisterRequest(String username, String email, String password) {
+        interactor.receiveRegisterRequest(username, email, password);
         registerView.spinProgressBar();
     }
 

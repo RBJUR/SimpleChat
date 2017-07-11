@@ -36,15 +36,6 @@
                 tools:text="Roque Buarque Jr" />
 
             <TextView
-                android:id="@+id/message_emoji"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/message_author"
-                android:layout_toEndOf="@id/message_author" />
-
-            <TextView
                 android:id="@+id/message_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

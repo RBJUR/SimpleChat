@@ -8,5 +8,5 @@ package com.example.roquebuarquejr.simplechat.login.presenter;
 public interface FirebaseLoginPresenter {
     void receiveUserLogin(String email, String password);
     void onFailure();
-    void onSuccess(String user, String uid, String emoji);
+    void onSuccess(String user, String uid);
 }
