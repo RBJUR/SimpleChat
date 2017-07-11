@@ -36,10 +36,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
 
     @Override
     public void logTheUserIn(String username, String uid) {
-        Intent intent = new Intent(this, UserListActivity.class);
-        intent.putExtra("uid", uid);
-        intent.putExtra("username", username);
-        startActivity(intent);
+        startActivity(UserListActivity.getStartIntent(this, uid, username));
     }
 
     @Override
