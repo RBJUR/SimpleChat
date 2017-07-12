@@ -8,7 +8,7 @@ import com.example.roquebuarquejr.simplechat.model.Message;
  */
 public interface MessagePresenter {
     void sendMessageToAdapter(Message message);
-    void requestMessages();
+    void requestMessages(String id);
     void sendMessage(String author, String message, String id);
 
 }

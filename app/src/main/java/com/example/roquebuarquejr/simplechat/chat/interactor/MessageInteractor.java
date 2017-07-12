@@ -15,34 +15,36 @@ import java.util.Map;
  * Created by roque
  */
 public class MessageInteractor {
-    private final MessagePresenter presenter;
-    private final Firebase mMessagesRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/messages");
-    private final Query mMessageQuery;
+    private MessagePresenter presenter;
+    private Firebase mMessagesRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/messages");
+    private Query mMessageQuery;
 
 
     public MessageInteractor(MessagePresenter pre) {
         this.presenter = pre;
-        this.mMessageQuery = mMessagesRef.orderByValue().limitToLast(100);
     }
-
 
     public void pushMessageToFirebase(String author, String message, String id) {
         String url = "https://simple-chat-6d9bd.firebaseio.com/messages";
-        if(id != null && !id.isEmpty()){
-            url.concat("/id");
-        }
         Firebase messageRef = new Firebase(url);
-        messageRef.push().setValue(createMessage(message, author));
+        messageRef.push().setValue(createMessage(message, author, id));
     }
 
-    public Map<String, Object> createMessage(String message, String author) {
+    public Map<String, Object> createMessage(String message, String author, String id) {
         Map<String, Object> values = new HashMap<>();
         values.put("message", message);
         values.put("author", author);
+        values.put("talkid", id);
         return values;
     }
 
-    public void request() {
+    public void request(String id) {
+        if (id != null && !id.isEmpty()) {
+            mMessageQuery = mMessagesRef.child("talkid").equalTo(id).orderByValue().limitToLast(100);
+        } else {
+            mMessageQuery = mMessagesRef.orderByValue().limitToLast(100);
+        }
+
         mMessageQuery.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {

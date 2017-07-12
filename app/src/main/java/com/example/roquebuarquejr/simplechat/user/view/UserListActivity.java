@@ -36,7 +36,7 @@ public class UserListActivity extends AppCompatActivity implements View.OnClickL
     private ArrayList<User> userList = new ArrayList<>();
     private UsersPresenterImpl presenter;
 
-    public static Intent getStartIntent(Context context, String userId, String userName){
+    public static Intent getStartIntent(Context context, String userId, String userName) {
         Intent intent = new Intent(context, UserListActivity.class);
         intent.putExtra(EXTRA_USER_ID, userId);
         intent.putExtra(EXTRA_USER_NAME, userName);
@@ -56,7 +56,7 @@ public class UserListActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         int itemPosition = recyclerView.getChildLayoutPosition(v);
         User item = userList.get(itemPosition);
-        startActivity(ChatScreenActivity.getStartIntent(this, item.getUsername(), item.getUid()));
+        startActivity(ChatScreenActivity.getStartIntent(this, item.getUsername(), item.getUid() + getIntent().getStringExtra(EXTRA_USER_ID)));
 
     }
 

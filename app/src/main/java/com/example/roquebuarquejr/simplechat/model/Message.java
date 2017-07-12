@@ -8,8 +8,15 @@ import java.io.Serializable;
 public class Message implements Serializable {
     private String author;
     private String message;
+    private String talkid;
 
     public Message() {
+    }
+
+    public Message(String talkid, String author, String message) {
+        this.talkid = talkid;
+        this.author = author;
+        this.message = message;
     }
 
     public String getAuthor() {
@@ -28,4 +35,11 @@ public class Message implements Serializable {
         this.message = message;
     }
 
+    public String getTalkid() {
+        return talkid;
+    }
+
+    public void setTalkid(String talkid) {
+        this.talkid = talkid;
+    }
 }

@@ -72,7 +72,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
 
     private void fillUI() {
         adapter = new CustomMessageRecyclerAdapter(getArguments().getString(ARG_USER_NAME));
-        adapter.request();
+        adapter.request(getArguments().getString(ARG_USER_ID));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

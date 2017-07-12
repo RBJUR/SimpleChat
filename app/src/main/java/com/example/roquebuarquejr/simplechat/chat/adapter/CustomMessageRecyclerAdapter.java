@@ -56,8 +56,8 @@ public class CustomMessageRecyclerAdapter extends RecyclerView.Adapter<CustomMes
     }
 
     @Override
-    public void request() {
-        presenter.requestMessages();
+    public void request(String id) {
+        presenter.requestMessages(id);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

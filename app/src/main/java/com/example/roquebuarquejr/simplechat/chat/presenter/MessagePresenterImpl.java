@@ -22,14 +22,15 @@ public class MessagePresenterImpl implements MessagePresenter {
     }
 
 
+
     @Override
     public void sendMessageToAdapter(Message message) {
         adapterView.addItem(message);
     }
 
     @Override
-    public void requestMessages() {
-        interactor.request();
+    public void requestMessages(String id) {
+        interactor.request(id);
     }
 
     @Override
