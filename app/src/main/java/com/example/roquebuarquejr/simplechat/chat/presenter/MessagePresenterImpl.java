@@ -29,12 +29,12 @@ public class MessagePresenterImpl implements MessagePresenter {
     }
 
     @Override
-    public void requestMessages(String id) {
-        interactor.request(id);
+    public void requestMessages(String id, String myUid) {
+        interactor.request(id, myUid);
     }
 
     @Override
-    public void sendMessage(String author, String message, String id) {
-        interactor.pushMessageToFirebase(author, message, id);
+    public void sendMessage(String author, String message, String id, String myUid) {
+        interactor.pushMessageToFirebase(author, message, id, myUid);
     }
 }

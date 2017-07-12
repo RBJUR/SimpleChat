@@ -23,6 +23,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
 
     private static final String ARG_USER_NAME = "ARG_USER_NAME";
     private static final String ARG_USER_ID = "ARG_USER_ID";
+    private static final String ARG_USER_MY_ID = "ARG_USER_MY_ID";
 
     private RecyclerView recyclerView;
     private EditText txtMessage;
@@ -30,11 +31,12 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private CustomMessageRecyclerAdapter adapter;
     private MessagePresenterImpl presenter;
 
-    public static ChatFragment newInstance(String userName, String uid){
+    public static ChatFragment newInstance(String userName, String uid, String myUid){
         ChatFragment fragment = new ChatFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ARG_USER_NAME, userName);
         bundle.putString(ARG_USER_ID, uid);
+        bundle.putString(ARG_USER_MY_ID, myUid);
         fragment.setArguments(bundle);
         return  fragment;
 
@@ -81,7 +83,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     }
 
     private void handleMessageClick() {
-        presenter.sendMessage(getArguments().getString(ARG_USER_NAME), txtMessage.getText().toString(), getArguments().getString(ARG_USER_ID));
+        presenter.sendMessage(getArguments().getString(ARG_USER_NAME), txtMessage.getText().toString(), getArguments().getString(ARG_USER_ID), getArguments().getString(ARG_USER_MY_ID));
         txtMessage.setText("");
         recyclerView.scrollToPosition(recyclerView.getBottom());
     }
