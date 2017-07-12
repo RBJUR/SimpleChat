@@ -56,7 +56,7 @@ public class UserListActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         int itemPosition = recyclerView.getChildLayoutPosition(v);
         User item = userList.get(itemPosition);
-        startActivity(ChatScreenActivity.getStartIntent(this, item.getUsername()));
+        startActivity(ChatScreenActivity.getStartIntent(this, item.getUsername(), item.getUid()));
 
     }
 

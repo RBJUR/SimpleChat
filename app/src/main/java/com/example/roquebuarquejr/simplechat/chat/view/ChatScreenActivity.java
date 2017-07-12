@@ -21,10 +21,12 @@ import com.firebase.client.Firebase;
 public class ChatScreenActivity extends AppCompatActivity {
 
     private static final String EXTRA_USER_NAME = "EXTRA_USER_NAME";
+    private static final String EXTRA_USER_ID = "EXTRA_USER_ID";
 
-    public static Intent getStartIntent(Context context, String userName){
+    public static Intent getStartIntent(Context context, String userName, String uid){
         Intent intent = new Intent(context, ChatScreenActivity.class);
         intent.putExtra(EXTRA_USER_NAME, userName);
+        intent.putExtra(EXTRA_USER_ID, uid);
         return  intent;
     }
 
@@ -40,7 +42,8 @@ public class ChatScreenActivity extends AppCompatActivity {
         super.onStart();
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.chat_activity_frame_layout, ChatFragment.newInstance(getIntent().getStringExtra(EXTRA_USER_NAME)), "chat");
+        transaction.add(R.id.chat_activity_frame_layout, ChatFragment.newInstance(getIntent().getStringExtra(EXTRA_USER_NAME),
+                getIntent().getStringExtra(EXTRA_USER_ID)), "chat");
         transaction.commit();
     }
 

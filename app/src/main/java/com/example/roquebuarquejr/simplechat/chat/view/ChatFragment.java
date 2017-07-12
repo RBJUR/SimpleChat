@@ -22,17 +22,19 @@ import com.example.roquebuarquejr.simplechat.chat.presenter.ChatMessagePresenter
 public class ChatFragment extends Fragment implements View.OnClickListener {
 
     private static final String ARG_USER_NAME = "ARG_USER_NAME";
+    private static final String ARG_USER_ID = "ARG_USER_ID";
 
-    private RecyclerView mMessagesListView;
-    private EditText mEnterMessageEditText;
-    private ImageButton mSendMessageButton;
+    private RecyclerView recyclerView;
+    private EditText txtMessage;
+    private ImageButton btnSend;
     private CustomMessageRecyclerAdapter adapter;
     private ChatMessagePresenterImpl presenter;
 
-    public static ChatFragment newInstance(String userName){
+    public static ChatFragment newInstance(String userName, String uid){
         ChatFragment fragment = new ChatFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ARG_USER_NAME, userName);
+        bundle.putString(ARG_USER_ID, uid);
         fragment.setArguments(bundle);
         return  fragment;
 
@@ -62,25 +64,25 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     }
 
     private void createUI(View view) {
-        mMessagesListView = (RecyclerView) view.findViewById(R.id.chat_recycler_view);
-        mEnterMessageEditText = (EditText) view.findViewById(R.id.chat_edit_text);
-        mSendMessageButton = (ImageButton) view.findViewById(R.id.chat_send_button);
-        mSendMessageButton.setOnClickListener(this);
+        recyclerView = (RecyclerView) view.findViewById(R.id.chat_recycler_view);
+        txtMessage = (EditText) view.findViewById(R.id.chat_edit_text);
+        btnSend = (ImageButton) view.findViewById(R.id.chat_send_button);
+        btnSend.setOnClickListener(this);
     }
 
     private void fillUI() {
-        adapter = new CustomMessageRecyclerAdapter(getActivity().getIntent().getStringExtra("username"));
+        adapter = new CustomMessageRecyclerAdapter(getArguments().getString(ARG_USER_NAME));
         adapter.request();
-        mMessagesListView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mMessagesListView.setHasFixedSize(true);
-        mMessagesListView.setItemAnimator(new DefaultItemAnimator());
-        mMessagesListView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
         presenter = new ChatMessagePresenterImpl();
     }
 
     private void handleMessageClick() {
-        presenter.sendMessage(getActivity().getIntent().getStringExtra("username"), mEnterMessageEditText.getText().toString(), "");
-        mEnterMessageEditText.setText("");
-        mMessagesListView.scrollToPosition(mMessagesListView.getBottom());
+        presenter.sendMessage(getArguments().getString(ARG_USER_NAME), txtMessage.getText().toString(), getArguments().getString(ARG_USER_ID));
+        txtMessage.setText("");
+        recyclerView.scrollToPosition(recyclerView.getBottom());
     }
 }
