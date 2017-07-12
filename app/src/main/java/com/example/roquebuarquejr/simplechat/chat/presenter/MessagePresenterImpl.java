@@ -9,13 +9,18 @@ import com.example.roquebuarquejr.simplechat.model.Message;
  * Created by roque
  */
 public class MessagePresenterImpl implements MessagePresenter {
-    private final MessageAdapterView adapterView;
-    private final MessageInteractor interactor;
+    private  MessageAdapterView adapterView;
+    private  MessageInteractor interactor;
 
     public MessagePresenterImpl(MessageAdapterView view) {
         this.adapterView = view;
         this.interactor = new MessageInteractor(this);
     }
+
+    public MessagePresenterImpl() {
+        this.interactor = new MessageInteractor(this);
+    }
+
 
     @Override
     public void sendMessageToAdapter(Message message) {
@@ -25,5 +30,10 @@ public class MessagePresenterImpl implements MessagePresenter {
     @Override
     public void requestMessages() {
         interactor.request();
+    }
+
+    @Override
+    public void sendMessage(String author, String message, String id) {
+        interactor.pushMessageToFirebase(author, message, id);
     }
 }

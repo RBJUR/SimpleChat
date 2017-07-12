@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.chat.adapter.CustomMessageRecyclerAdapter;
-import com.example.roquebuarquejr.simplechat.chat.presenter.ChatMessagePresenterImpl;
+import com.example.roquebuarquejr.simplechat.chat.presenter.MessagePresenterImpl;
 
 /**
  * Created by roque
@@ -28,7 +28,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private EditText txtMessage;
     private ImageButton btnSend;
     private CustomMessageRecyclerAdapter adapter;
-    private ChatMessagePresenterImpl presenter;
+    private MessagePresenterImpl presenter;
 
     public static ChatFragment newInstance(String userName, String uid){
         ChatFragment fragment = new ChatFragment();
@@ -77,7 +77,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-        presenter = new ChatMessagePresenterImpl();
+        presenter = new MessagePresenterImpl();
     }
 
     private void handleMessageClick() {
@@ -85,4 +85,5 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
         txtMessage.setText("");
         recyclerView.scrollToPosition(recyclerView.getBottom());
     }
+
 }
