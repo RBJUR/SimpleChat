@@ -6,11 +6,14 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import com.example.roquebuarquejr.simplechat.R;
 import com.example.roquebuarquejr.simplechat.chat.adapter.CustomMessageRecyclerAdapter;
@@ -31,14 +34,14 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private CustomMessageRecyclerAdapter adapter;
     private MessagePresenterImpl presenter;
 
-    public static ChatFragment newInstance(String userName, String uid, String myUid){
+    public static ChatFragment newInstance(String userName, String uid, String myUid) {
         ChatFragment fragment = new ChatFragment();
         Bundle bundle = new Bundle();
         bundle.putString(ARG_USER_NAME, userName);
         bundle.putString(ARG_USER_ID, uid);
         bundle.putString(ARG_USER_MY_ID, myUid);
         fragment.setArguments(bundle);
-        return  fragment;
+        return fragment;
 
     }
 
@@ -75,17 +78,33 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private void fillUI() {
         adapter = new CustomMessageRecyclerAdapter(getArguments().getString(ARG_USER_NAME));
         adapter.request(getArguments().getString(ARG_USER_ID), getArguments().getString(ARG_USER_MY_ID));
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
         presenter = new MessagePresenterImpl();
+
+        recyclerView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right,int bottom, int oldLeft, int oldTop,int oldRight, int oldBottom)
+            {
+                recyclerView.scrollToPosition(adapter.getItemCount()  > 1 ? adapter.getItemCount() - 1 : 0);
+            }
+        });
+
+        recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                recyclerView.smoothScrollToPosition(adapter.getItemCount()  > 1 ? adapter.getItemCount() - 1 : 0);
+            }
+        });
+
     }
 
     private void handleMessageClick() {
         presenter.sendMessage(getArguments().getString(ARG_USER_NAME), txtMessage.getText().toString(), getArguments().getString(ARG_USER_ID), getArguments().getString(ARG_USER_MY_ID));
         txtMessage.setText("");
-        recyclerView.scrollToPosition(recyclerView.getBottom());
+        //recyclerView.scrollToPosition(recyclerView.getBottom());
+
     }
 
 }

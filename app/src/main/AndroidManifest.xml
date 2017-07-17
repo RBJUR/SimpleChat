@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".chat.view.ChatScreenActivity" />
+        <activity
+            android:name=".chat.view.ChatScreenActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".registration.view.RegisterActivity" />
         <activity android:name=".login.view.LoginActivity" />
         <activity android:name=".user.view.UserListActivity" />

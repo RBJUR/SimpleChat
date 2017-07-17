@@ -10,5 +10,5 @@ public interface MessagePresenter {
     void sendMessageToAdapter(Message message);
     void requestMessages(String id, String myUid);
     void sendMessage(String author, String message, String id, String myUid);
-
+    void scrollRecyclerView(int position);
 }

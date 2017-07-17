@@ -26,6 +26,7 @@ public class MessagePresenterImpl implements MessagePresenter {
     @Override
     public void sendMessageToAdapter(Message message) {
         adapterView.addItem(message);
+
     }
 
     @Override
@@ -36,5 +37,10 @@ public class MessagePresenterImpl implements MessagePresenter {
     @Override
     public void sendMessage(String author, String message, String id, String myUid) {
         interactor.pushMessageToFirebase(author, message, id, myUid);
+    }
+
+    @Override
+    public void scrollRecyclerView(int position) {
+
     }
 }
