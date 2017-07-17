@@ -8,5 +8,5 @@ import com.example.roquebuarquejr.simplechat.model.Message;
  */
 public interface MessageAdapterView {
     void addItem(Message message);
-    void request(String id);
+    void request(String id, String myUid);
 }

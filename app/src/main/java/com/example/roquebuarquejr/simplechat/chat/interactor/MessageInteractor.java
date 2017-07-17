@@ -29,28 +29,34 @@ public class MessageInteractor {
     public void pushMessageToFirebase(String author, String message, String id, String myUid) {
         String url = "https://simple-chat-6d9bd.firebaseio.com/messages";
         Firebase messageRef = new Firebase(url);
-        messageRef.push().setValue(createMessage(message, author, id + myUid));
+        messageRef.push().setValue(createMessage(message, author, id, myUid));
     }
 
-    public Map<String, Object> createMessage(String message, String author, String id) {
+    public Map<String, Object> createMessage(String message, String author, String sendTo, String sendBy) {
         Map<String, Object> values = new HashMap<>();
         values.put("message", message);
         values.put("author", author);
-        values.put("talkid", id);
+        values.put("sendto", sendTo);
+        values.put("sendby", sendBy);
         return values;
     }
 
-    public void request(String id, String myUid) {
-        if (id != null && !id.isEmpty()) {
-            mMessageQuery = mMessagesRef.orderByChild("talkid").equalTo(id).limitToLast(100);
-        } else {
-            mMessageQuery = mMessagesRef.orderByValue().limitToLast(100);
-        }
-
+    public void request(final String id, final String myUid) {
+        mMessageQuery = mMessagesRef.orderByValue().limitToLast(100);
         mMessageQuery.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                presenter.sendMessageToAdapter(dataSnapshot.getValue(Message.class));
+
+                if (id != null && myUid != null && !id.isEmpty() && !myUid.isEmpty()) {
+                    final String sendby = dataSnapshot.child("sendby").getValue(String.class);
+                    final String sendto = dataSnapshot.child("sendto").getValue(String.class);
+                    if (id.equals(sendto) && myUid.equals(sendby) || id.equals(sendby) && myUid.equals(sendto)) {
+                        presenter.sendMessageToAdapter(dataSnapshot.getValue(Message.class));
+                    }
+                } else {
+                    presenter.sendMessageToAdapter(dataSnapshot.getValue(Message.class));
+                }
+
                 Log.d("FirBonChildAdded", "onChildAdded");
             }
 

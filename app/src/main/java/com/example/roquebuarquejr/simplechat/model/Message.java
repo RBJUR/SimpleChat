@@ -8,15 +8,17 @@ import java.io.Serializable;
 public class Message implements Serializable {
     private String author;
     private String message;
-    private String talkid;
+    private String sendby;
+    private String sendto;
 
     public Message() {
     }
 
-    public Message(String talkid, String author, String message) {
-        this.talkid = talkid;
+    public Message(String author, String message, String sendby, String sendto) {
         this.author = author;
         this.message = message;
+        this.sendby = sendby;
+        this.sendto = sendto;
     }
 
     public String getAuthor() {
@@ -35,11 +37,20 @@ public class Message implements Serializable {
         this.message = message;
     }
 
-    public String getTalkid() {
-        return talkid;
+
+    public String getSendby() {
+        return sendby;
     }
 
-    public void setTalkid(String talkid) {
-        this.talkid = talkid;
+    public void setSendby(String sendby) {
+        this.sendby = sendby;
+    }
+
+    public String getSendto() {
+        return sendto;
+    }
+
+    public void setSendto(String sendto) {
+        this.sendto = sendto;
     }
 }
