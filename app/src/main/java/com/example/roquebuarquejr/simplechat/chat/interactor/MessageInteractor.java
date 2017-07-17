@@ -57,32 +57,26 @@ public class MessageInteractor {
                     presenter.sendMessageToAdapter(dataSnapshot.getValue(Message.class));
                 }
 
-                Log.d("FirBonChildAdded", "onChildAdded");
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Log.d("FirBonChildChanged", "onChildChanged");
 
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                Log.d("FirBonChildRemoved", "onChildRemoved");
 
             }
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                Log.d("FirBonChildMoved", "onChildMoved");
 
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
                 firebaseError.toException().printStackTrace();
-                Log.d("FirBonCancelled", "onCancelled");
-
 
             }
         });
