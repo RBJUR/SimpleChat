@@ -4,16 +4,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".registration.view.RegisterActivity">
+    android:padding="16dp">
 
-    <FrameLayout
-        android:id="@+id/register_activity_frame_layout"
+    <TextView
+        android:id="@+id/register_txt_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="@string/e_mail_address"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/register_edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="@string/e_g_firebase_admin_admin_com"
+        android:textColor="@color/black"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/black" />
+
+
+    <TextView
+        android:id="@+id/register_txt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="@string/e_mail_address"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/register_edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="@string/e_g_firebase_admin_admin_com"
+        android:textColor="@color/black"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/black" />
+
+    <TextView
+        android:id="@+id/register_txt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="@string/password"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/register_edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/e_g_password12345"
+        android:textColor="@color/black"
+        android:inputType="textPassword"
+        android:textColorHint="@color/black" />
+
+    <Button
+        android:id="@id/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5sp"
+        android:text="@string/register_btn" />
 
     <ProgressBar
         android:id="@id/progress_bar"
@@ -25,5 +81,4 @@
         android:indeterminateTintMode="src_in"
         android:visibility="gone"
         tools:ignore="UnusedAttribute" />
-
 </LinearLayout>

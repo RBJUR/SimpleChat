@@ -16,6 +16,7 @@
     <string name="online_users">Usuários online </string>
     <string name="current_online_users_by_username">Current online users by username:</string>
     <string name="continue_with_register">Continue</string>
+    <string name="register_btn">CADASTRAR</string>
     <string name="register_failure">Seu cadastro falhou</string>
     <string name="register_success">Sucesso!</string>
     <string name="choose_an_awesome_user_by_which_we_will_recognize_you">Seu nome</string>
