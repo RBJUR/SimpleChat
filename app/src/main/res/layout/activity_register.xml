@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:text="@string/e_mail_address"
+        android:text="@string/username"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -20,9 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="@string/e_g_firebase_admin_admin_com"
+        android:hint="@string/e_g_username"
         android:textColor="@color/black"
-        android:inputType="textEmailAddress"
         android:textColorHint="@color/black" />
 
 

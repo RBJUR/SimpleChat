@@ -40,7 +40,7 @@ public class RegisterInteractor {
                             presenter.onSuccess();
                         } else {
                             Log.d("AuthFail", task.getException().toString());
-                            presenter.onFailure();
+                            presenter.onFailure("Cadastro falhou");
                         }
 
                     }

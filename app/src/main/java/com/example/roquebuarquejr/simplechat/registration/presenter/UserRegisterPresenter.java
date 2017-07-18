@@ -6,7 +6,7 @@ package com.example.roquebuarquejr.simplechat.registration.presenter;
 public interface UserRegisterPresenter {
     void receiveRegisterRequest(String username, String email, String password);
 
-    void onFailure();
+    void onFailure(String message);
 
     void onSuccess();
 }

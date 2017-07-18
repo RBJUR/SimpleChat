@@ -6,9 +6,8 @@ package com.example.roquebuarquejr.simplechat.registration.view;
 public interface RegisterView {
     void onSuccess();
 
-    void onFailure();
+    void onFailure(String message);
 
-    void spinProgressBar();
+    void showLoading(boolean show);
 
-    void stopProgressBar();
 }

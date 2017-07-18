@@ -20,18 +20,18 @@ public class UserRegisterPresenterImpl implements UserRegisterPresenter {
     @Override
     public void receiveRegisterRequest(String username, String email, String password) {
         interactor.receiveRegisterRequest(username, email, password);
-        registerView.spinProgressBar();
+        registerView.showLoading(true);
     }
 
     @Override
-    public void onFailure() {
-        registerView.onFailure();
-        registerView.stopProgressBar();
+    public void onFailure(String message) {
+        registerView.onFailure(message);
+        registerView.showLoading(false);
     }
 
     @Override
     public void onSuccess() {
         registerView.onSuccess();
-        registerView.stopProgressBar();
+        registerView.showLoading(false);
     }
 }
