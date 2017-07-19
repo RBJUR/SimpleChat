@@ -30,8 +30,8 @@ public class UserRegisterPresenterImpl implements UserRegisterPresenter {
     }
 
     @Override
-    public void onSuccess() {
-        registerView.onSuccess();
+    public void onSuccess(String uid) {
+        registerView.onSuccess(uid);
         registerView.showLoading(false);
     }
 }

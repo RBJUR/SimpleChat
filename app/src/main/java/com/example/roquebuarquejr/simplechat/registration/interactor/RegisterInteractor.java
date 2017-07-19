@@ -37,7 +37,7 @@ public class RegisterInteractor {
                             String uid = result.getUser().getUid();
                             userRef = new Firebase("https://simple-chat-6d9bd.firebaseio.com/Users/" + uid);
                             userRef.setValue(createUser(username, uid, email));
-                            presenter.onSuccess();
+                            presenter.onSuccess(uid);
                         } else {
                             Log.d("AuthFail", task.getException().toString());
                             presenter.onFailure("Cadastro falhou");

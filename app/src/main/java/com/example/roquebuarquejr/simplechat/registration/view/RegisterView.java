@@ -4,7 +4,7 @@ package com.example.roquebuarquejr.simplechat.registration.view;
  * Created by roque
  */
 public interface RegisterView {
-    void onSuccess();
+    void onSuccess(String uid);
 
     void onFailure(String message);
 

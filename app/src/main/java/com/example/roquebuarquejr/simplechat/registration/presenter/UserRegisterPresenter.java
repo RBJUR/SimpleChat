@@ -8,5 +8,5 @@ public interface UserRegisterPresenter {
 
     void onFailure(String message);
 
-    void onSuccess();
+    void onSuccess(String uid);
 }
