@@ -73,6 +73,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
         txtMessage = (EditText) view.findViewById(R.id.chat_edit_text);
         btnSend = (ImageButton) view.findViewById(R.id.chat_send_button);
         btnSend.setOnClickListener(this);
+        getActivity().setTitle(getArguments().getString(ARG_USER_NAME));
     }
 
     private void fillUI() {

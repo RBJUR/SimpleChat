@@ -37,6 +37,8 @@ public class ChatScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_service);
         Firebase.setAndroidContext(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
@@ -47,6 +49,17 @@ public class ChatScreenActivity extends AppCompatActivity {
         transaction.add(R.id.chat_activity_frame_layout, ChatFragment.newInstance(getIntent().getStringExtra(EXTRA_USER_NAME),
                 getIntent().getStringExtra(EXTRA_USER_ID), getIntent().getStringExtra(EXTRA_USER_MY_ID)), "chat");
         transaction.commit();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
     }
 
 }
