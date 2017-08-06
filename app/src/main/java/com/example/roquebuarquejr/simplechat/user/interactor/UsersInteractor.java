@@ -20,13 +20,16 @@ public class UsersInteractor {
         this.presenter = pre;
     }
 
-    public void request() {
+    public void request(final String myUserId) {
         usersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<User> mListOfUsers = new ArrayList<>();
                 for (DataSnapshot x : dataSnapshot.getChildren()) {
-                    mListOfUsers.add(x.getValue(User.class));
+                    User user = x.getValue(User.class);
+                    if (!myUserId.equals(user.getUid())) {
+                        mListOfUsers.add(user);
+                    }
                 }
                 presenter.getChildren(mListOfUsers);
             }

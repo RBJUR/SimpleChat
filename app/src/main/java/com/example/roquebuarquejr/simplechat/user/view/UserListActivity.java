@@ -53,7 +53,7 @@ public class UserListActivity extends AppCompatActivity implements View.OnClickL
         setTitle("Users");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         presenter = new UsersPresenterImpl(this);
-        presenter.request();
+        presenter.request(getIntent().getStringExtra(EXTRA_USER_ID));
         Log.d("Teste", "este");
     }
 

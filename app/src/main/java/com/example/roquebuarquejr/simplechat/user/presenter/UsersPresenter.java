@@ -10,5 +10,5 @@ import java.util.ArrayList;
  */
 public interface UsersPresenter {
     void getChildren(ArrayList<User> users);
-    void request();
+    void request(String userId);
 }

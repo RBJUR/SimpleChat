@@ -26,8 +26,8 @@ public class UsersPresenterImpl implements UsersPresenter {
     }
 
     @Override
-    public void request() {
-        interactor.request();
+    public void request(String userId) {
+        interactor.request(userId);
     }
 
 }
